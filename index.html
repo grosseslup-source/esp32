@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Message ESP32</title>
+</head>
+
+<body>
+
+<h1>Envoyer un message au ESP32</h1>
+
+<input id="msg" placeholder="écris ton message">
+<button onclick="send()">Envoyer</button>
+
+<script>
+function send(){
+let message = document.getElementById("msg").value;
+fetch("message.txt",{
+method:"PUT",
+body:message
+});
+}
+</script>
+
+</body>
+</html>
